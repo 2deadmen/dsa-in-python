@@ -1,5 +1,16 @@
-import numpy as np
+fruit_list1 = ['Apple', 'Berry', 'Cherry', 'Papaya']
+fruit_list2 = fruit_list1
+fruit_list3 = fruit_list1[:]
+print(fruit_list1)
+fruit_list2[0] = 'Guava'
+fruit_list3[1] = 'Kiwi'
 
-arr = np.array([[1,2,3],[1,2,3]])
-new=np.delete(arr,0,axis=1)
-print(new)
+sum = 0
+for ls in (fruit_list1, fruit_list2, fruit_list3):
+    
+    if ls[0] == 'Guava':
+        sum += 1
+    if ls[1] == 'Kiwi':
+        sum += 20
+ 
+print(sum)
