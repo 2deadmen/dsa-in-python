@@ -4,26 +4,34 @@ class Solution(object):
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-        new =[]
-        for i in strs:
-            l1=list(i)
+        new=[]
+        num = len(strs)
+        i=0
+        while num > 0:
+            l1=list(strs[i])
             l1.sort()
             inside=[]
-            for j in range(1,len(strs)):
-                if len(strs) > 1:
-                    l2=list(strs[j])
-                    l2.sort()
-                    if not i in inside:
-                        inside.append(i)
-                        strs.remove(i)
-                    if l1==l2:
-                        inside.append(strs[j])
-                        strs.remove(strs[j])
-                    new.append(inside)
+            j=0
+            inside.append(strs[0])
+            strs.remove(strs[0])
+            num=len(strs)
+            while num > 0 and j < num:
+                anag=strs[j]
+                l2=list(strs[j])
+                l2.sort()
+                if l1==l2:
+                    inside.append(anag)
+                    strs.remove(anag)
+                else:
+                    j+=1
+                num=len(strs) 
                 
+                     
+ 
+            inside.sort()
+            if inside not in new and inside != []:
+                new.append(inside) 
+            
         return new
-ana=Solution()
-strs = ["eat","tea","tan","ate","nat","bat"]
-print(ana.groupAnagrams(strs))            
-
-
+sl=Solution()
+print(sl.groupAnagrams(["a"]))
