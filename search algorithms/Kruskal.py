@@ -1,5 +1,3 @@
-#   Created by Elshad Karimov 
-#   Copyright © 2021 AppMillers. All rights reserved.
 
 # Kruskal Algorithm  in Python
 import DisjointSet as dst
