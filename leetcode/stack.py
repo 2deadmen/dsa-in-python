@@ -1,34 +1,27 @@
-class Solution(object):
-    def isValid(self, s):
+def search( nums, target):
         """
-        :type s: str
-        :rtype: bool
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
         """
+        l=0
+        r=len(nums)-1
+        while l <= r:
+ 
+            mid = l + (r - l) // 2
+            print(mid)
+            if nums[mid] == target:
+                return mid
     
-        sa=list(s)
-        flag=True
-        copy=list(s)
-        for i in sa:
-          if i in copy:
-            copy.remove(i)
-            if i == '(':
-                i=')'
-            elif i== '[':
-                i=']'
-            elif i=='{':
-                i='}'
-            elif i == ')':
-                i='('
-            elif i== ']':
-                i='['
-            elif i== '}':
-                i='{'
-            if i in copy:
-                copy.remove(i) 
-          if copy !=[]:
-            flag=False
-   
-        return flag
-
-sl=Solution()
-print(sl.isValid("()[]"))
+        
+            elif nums[mid] < target:
+                l = mid + 1
+    
+        
+            else:
+                r = mid - 1
+    
+ 
+        return -1
+        
+print(search([-1,0,5],5))
