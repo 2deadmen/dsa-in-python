@@ -71,7 +71,7 @@ def heapifyTreeExtract(rootNode, index, heapType):
             return
 
     else:
-        if heapType == "Min":
+        if heapType == "Max":
             if rootNode.customList[leftIndex] < rootNode.customList[rightIndex]:
                 swapChild = leftIndex
             else:
@@ -113,11 +113,13 @@ def deleteEntireBP(rootNode):
 
 
 newHeap = Heap(5)
-inserNode(newHeap, 4, "Max")
-inserNode(newHeap, 5, "Max")
-inserNode(newHeap, 2, "Max")
-inserNode(newHeap, 1, "Max")
-deleteEntireBP(newHeap)
+inserNode(newHeap, 4, "Min")
+inserNode(newHeap, 5, "Min")
+inserNode(newHeap, 2, "Min")
+inserNode(newHeap, 1, "Min")
+# deleteEntireBP(newHeap)
 levelOrderTraversal(newHeap)
-
-
+print(extractNode(newHeap,heapType="Min"))
+levelOrderTraversal(newHeap)
+heapifyTreeExtract(newHeap,1,"Min")
+levelOrderTraversal(newHeap)
